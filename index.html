@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himani Rodhiyal — Frontend Developer</title>
+
+  <!-- Google Fonts: Syne (display) + DM Mono (code accent) + Lato (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Boxicons for social & tech icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       LOADER
+  ============================================================ -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <span class="loader-bracket">{</span>
+      <span class="loader-text" id="loaderText"></span>
+      <span class="loader-cursor">|</span>
+      <span class="loader-bracket">}</span>
+    </div>
+    <div class="loader-bar">
+      <div class="loader-progress" id="loaderProgress"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CUSTOM CURSOR
+  ============================================================ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>HR<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Dark / Light toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class='bx bx-sun' id="themeIconSun"></i>
+          <i class='bx bx-moon' id="themeIconMoon"></i>
+        </button>
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section class="hero" id="hero">
+    <!-- Particle canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Decorative geometric shapes -->
+    <div class="hero-geo geo-1"></div>
+    <div class="hero-geo geo-2"></div>
+    <div class="hero-geo geo-3"></div>
+
+    <div class="hero-content">
+      <p class="hero-greeting reveal-up" style="--delay:.1s">
+        <span class="mono-tag">&lt;hello world /&gt;</span>
+      </p>
+      <h1 class="hero-name reveal-up" style="--delay:.25s">
+        Himani<br><span class="gradient-text">Rodhiyal</span>
+      </h1>
+      <p class="hero-role reveal-up" style="--delay:.4s">
+        <span class="mono-tag">// </span>
+        <span id="typingText"></span><span class="typing-cursor">|</span>
+      </p>
+      <p class="hero-tagline reveal-up" style="--delay:.55s">
+        I build modern, user-friendly web experiences<br>that live at the intersection of art and code.
+      </p>
+      <div class="hero-cta reveal-up" style="--delay:.7s">
+        <a href="#projects" class="btn btn-primary">
+          <span>View Projects</span>
+          <i class='bx bx-rocket'></i>
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          <span>Contact Me</span>
+          <i class='bx bx-send'></i>
+        </a>
+      </div>
+      <div class="hero-scroll reveal-up" style="--delay:.9s">
+        <span>Scroll to explore</span>
+        <div class="scroll-line">
+          <div class="scroll-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating badge -->
+    <div class="hero-badge reveal-fade" style="--delay:1.1s">
+      <i class='bx bxs-circle pulse-dot'></i>
+      <span>Available for hire</span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label"><span class="mono-tag">02.</span> About</p>
+        <h2 class="section-title">Who I <span class="gradient-text">Am</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Profile image column -->
+        <div class="about-img-wrap reveal-left">
+          <div class="about-img-frame">
+            <div class="about-img-placeholder">
+              <!-- <i class='bx bx-user'></i> -->
+              <span class="mypic"> <img src="profile.png" alt="profile"></span>
+
+            </div>
+            <div class="img-corner img-corner--tl"></div>
+            <div class="img-corner img-corner--br"></div>
+          </div>
+          <!-- Floating stats -->
+          <!-- <div class="stat-bubble stat-bubble--1">
+            <span class="stat-num"> Fresher</span>
+            <span class="stat-label">Years Exp.</span>
+          </div> -->
+          <div class="stat-bubble stat-bubble--2">
+            <span class="stat-num">10+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+        </div>
+
+        <!-- Text column -->
+        <div class="about-text reveal-right">
+          <p class="about-intro">
+            Hi! I'm a <strong>Frontend Developer</strong> passionate about crafting
+            pixel-perfect, performant web applications. I turn complex problems into
+            elegant, intuitive digital experiences.
+          </p>
+          <p>
+            With a strong foundation in modern JavaScript and React ecosystems, I focus
+            on bridging the gap between beautiful design . When I'm
+            not pushing pixels, you'll find me exploring open-source projects or
+            sharpening my UI/UX skills.
+          </p>
+
+          <ul class="about-strengths">
+            <li>
+              <i class='bx bx-check-circle'></i>
+              <div>
+                <strong>UI-Focused Engineering</strong>
+                <span>Obsessive about details, animations, and interactions</span>
+              </div>
+            </li>
+            <li>
+              <i class='bx bx-check-circle'></i>
+              <div>
+                <strong>Problem-Solver at Heart</strong>
+                <span>Breaking down complex challenges with clean solutions</span>
+              </div>
+            </li>
+            <li>
+              <i class='bx bx-check-circle'></i>
+              <div>
+                <strong>Performance Obsessed</strong>
+                <span>Lighthouse 100 is the goal, always</span>
+              </div>
+            </li>
+          </ul>
+
+          <a href="#" class="btn btn-primary" download>
+            <span>Download CV</span>
+            <i class='bx bx-download'></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS
+  ============================================================ -->
+  <section class="section skills" id="skills">
+    <div class="skills-bg-glow"></div>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label"><span class="mono-tag">03.</span> Skills</p>
+        <h2 class="section-title">My <span class="gradient-text">Toolkit</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <!-- Tech Icons Row -->
+      <div class="tech-icons-row reveal-up">
+        <div class="tech-icon-item" data-tip="HTML5">
+          <i class='bx bxl-html5'></i><span>HTML5</span>
+        </div>
+        <div class="tech-icon-item" data-tip="CSS3">
+          <i class='bx bxl-css3'></i><span>CSS3</span>
+        </div>
+        <div class="tech-icon-item" data-tip="JavaScript">
+          <i class='bx bxl-javascript'></i><span>JavaScript</span>
+        </div>
+        <div class="tech-icon-item" data-tip="React">
+          <i class='bx bxl-react'></i><span>React</span>
+        </div>
+        <div class="tech-icon-item" data-tip="Node.js">
+          <i class='bx bxl-nodejs'></i><span>Node.js</span>
+        </div>
+        <div class="tech-icon-item" data-tip="Git">
+          <i class='bx bxl-git'></i><span>Git</span>
+        </div>
+        <div class="tech-icon-item" data-tip="Figma">
+          <i class='bx bxl-figma'></i><span>Figma</span>
+        </div>
+       
+      </div>
+
+      <!-- Progress Bars -->
+      <div class="skills-grid">
+        <div class="skill-card reveal-up" style="--delay:.05s">
+          <div class="skill-header">
+            <span class="skill-name"><i class='bx bxl-html5'></i> HTML5 / CSS3</span>
+            <span class="skill-pct">90%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-pct="95"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal-up" style="--delay:.1s">
+          <div class="skill-header">
+            <span class="skill-name"><i class='bx bxl-javascript'></i> JavaScript ES6+</span>
+            <span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-pct="90"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal-up" style="--delay:.15s">
+          <div class="skill-header">
+            <span class="skill-name"><i class='bx bxl-react'></i> React </span>
+            <span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-pct="88"></div>
+          </div>
+        </div>
+        <!-- <div class="skill-card reveal-up" style="--delay:.2s">
+          <div class="skill-header">
+            <span class="skill-name"><i class='bx bxl-typescript'></i> TypeScript</span>
+            <span class="skill-pct">82%</span>
+          </div>
+          <div class="skill-bar"><div class="skill-fill" data-pct="82"></div></div>
+        </div> -->
+        <div class="skill-card reveal-up" style="--delay:.25s">
+          <div class="skill-header">
+            <span class="skill-name"><i class='bx bxl-nodejs'></i> Node / Express</span>
+            <span class="skill-pct">75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-pct="75"></div>
+          </div>
+        </div>
+        <div class="skill-card reveal-up" style="--delay:.3s">
+          <div class="skill-header">
+            <span class="skill-name"><i class='bx bxl-figma'></i> UI/UX & Figma</span>
+            <span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" data-pct="80"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+  ============================================================ -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label"><span class="mono-tag">04.</span> Work</p>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Card 1 -->
+        <article class="project-card reveal-up" style="--delay:.05s">
+          <div class="project-card-glow"></div>
+          <div class="project-top">
+            <span class="project-num mono-tag">01</span>
+            <div class="project-links">
+              <a href="https://github.com/himani79737/Password_Manager-" target="_blank" aria-label="GitHub"
+                class="icon-btn"><i class='bx bxl-github'></i></a>
+              <a href="https://passwordmanager79.netlify.app/" target="_blank" aria-label="Live Demo"
+                class="icon-btn"><i class='bx bx-link-external'></i></a>
+            </div>
+          </div>
+          <div class="project-icon-wrap">
+            <i class='bx bx-store-alt'></i>
+          </div>
+          <h3 class="project-title">PasswordManager</h3>
+          <p class="project-desc">A simple and secure Password Manager web application built using React.
+            This app helps users store, view, and manage their passwords in one place with a clean and user-friendly
+            interface..</p>
+          <div class="project-tags">
+            <span>React</span><span>JavaScript (ES6+)</span><span>CSS</span><span>LocalStorage </span>
+          </div>
+        </article>
+
+        <!-- Card 2 (featured / large) -->
+        <article class="project-card project-card--featured reveal-up" style="--delay:.1s">
+          <div class="project-card-glow"></div>
+          <div class="project-top">
+            <span class="project-num mono-tag">02</span>
+            <div class="project-links">
+              <a href="https://github.com/himani79737/ExpenseTracker" target="_blank" aria-label="GitHub"
+                class="icon-btn"><i class='bx bxl-github'></i></a>
+              <a href="https://expense-tracker-git-main-himani79737s-projects.vercel.app/" target="_blank"
+                aria-label="Live Demo" class="icon-btn"><i class='bx bx-link-external'></i></a>
+            </div>
+          </div>
+          <div class="project-featured-badge">⭐ Featured</div>
+          <div class="project-icon-wrap">
+            <i class='bx bx-brain'></i>
+          </div>
+          <h3 class="project-title">Expense Tracker</h3>
+          <p class="project-desc">A modern and responsive Expense Tracker Web Application built with React that helps
+            users manage daily expenses, track spending patterns, and monitor budgets efficiently.</p>
+          <div class="project-tags">
+            <span>React</span><span>JavaScript (ES6)</span><span>CSS</span><span>HTML</span>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="project-card reveal-up" style="--delay:.15s">
+          <div class="project-card-glow"></div>
+          <div class="project-top">
+            <span class="project-num mono-tag">03</span>
+            <div class="project-links">
+              <a href="https://github.com/himani79737/RecipeFind" target="_blank" aria-label="GitHub"
+                class="icon-btn"><i class='bx bxl-github'></i></a>
+              <a href="https://recipe-find-tau.vercel.app/" target="_blank" aria-label="Live Demo" class="icon-btn"><i
+                  class='bx bx-link-external'></i></a>
+            </div>
+          </div>
+          <div class="project-icon-wrap">
+            <i class='bx bx-chat'></i>
+          </div>
+          <h3 class="project-title">Recipe Finder </h3>
+          <p class="project-desc">A simple and interactive web application that allows users to search for recipes and
+            view details instantly using a public API.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript (ES6)</span><span>JWTREST API</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EXPERIENCE / EDUCATION
+  ============================================================ -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label"><span class="mono-tag">05.</span> Journey</p>
+        <h2 class="section-title">Experience &amp; <span class="gradient-text">Education</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="timeline-tabs">
+        <button class="tab-btn active" data-tab="work">Work</button>
+        <button class="tab-btn" data-tab="education">Education</button>
+      </div>
+
+      <!-- Work Timeline -->
+      <div class="timeline" id="tab-work">
+        <div class="timeline-item reveal-left">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-date mono-tag">2026 — Present</span>
+            <h3 class="tl-role"> Frontend Developer (Self Projects)</h3>
+            <span class="tl-company">April 2026 </span>
+            <p class="tl-desc">Built a Recipe Finder App using React, API integration, and responsive UI.
+              Created an Expense Tracker with charts using Recharts
+              Developed a Portfolio Website with modern UI and animations.</p>
+
+          </div>
+        </div>
+
+       
+      </div>
+
+      <!-- Education Timeline -->
+      <div class="timeline hidden" id="tab-education">
+        <div class="timeline-item reveal-left">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <span class="tl-date mono-tag">2022 — 2025</span>
+            <h3 class="tl-role">BCA (Bachelor of Computer Application)</h3>
+            <span class="tl-company"><i class='bx bx-graduation'></i> Kurukshetra University</span>
+          </div>
+        </div>
+
+       
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+  ============================================================ -->
+  <section class="section contact" id="contact">
+    <div class="contact-bg-glow"></div>
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label"><span class="mono-tag">06.</span> Contact</p>
+        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Info column -->
+        <div class="contact-info reveal-left">
+          <p class="contact-tagline">Have a project in mind? Let's build something amazing together.</p>
+          <ul class="contact-details">
+            <li>
+              <div class="contact-icon-wrap"><i class='bx bx-envelope'></i></div>
+              <div>
+                <span>Email</span>
+                <a href="mailto:rodhiyalhimani@gmail.com">rodhiyalhimani@gmail.com</a>
+              </div>
+            </li>
+            <li>
+              <div class="contact-icon-wrap"><i class='bx bx-map-pin'></i></div>
+              <div>
+                <span>Location</span>
+                <a href="#">Phase 1 Panchkula, Haryana</a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="social-links">
+            <a href="https://github.com/himani79737" target="_blank" class="social-btn" aria-label="GitHub">
+              <i class='bx bxl-github'></i>
+            </a>
+            <a href="https://www.linkedin.com/in/himani-rodhiyal-84502b2a6/" target="_blank" class="social-btn"
+              aria-label="LinkedIn">
+              <i class='bx bxl-linkedin'></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form column -->
+        <div class="contact-form-wrap reveal-right">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Full Name</label>
+                <div class="input-wrap">
+                  <i class='bx bx-user'></i>
+                  <input type="text" id="fname" name="name" placeholder="Himani Rodhiyal" required />
+                </div>
+                <span class="form-error" id="nameError"></span>
+              </div>
+              <div class="form-group">
+                <label for="femail">Email Address</label>
+                <div class="input-wrap">
+                  <i class='bx bx-envelope'></i>
+                  <input type="email" id="femail" name="email" placeholder="abc@example.com" required />
+                </div>
+                <span class="form-error" id="emailError"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fsubject">Subject</label>
+              <div class="input-wrap">
+                <i class='bx bx-edit'></i>
+                <input type="text" id="fsubject" name="subject" placeholder="Project Inquiry" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fmessage">Message</label>
+              <div class="input-wrap input-wrap--textarea">
+                <i class='bx bx-message-square-detail'></i>
+                <textarea id="fmessage" name="message" rows="5" placeholder="Tell me about your project..."
+                  required></textarea>
+              </div>
+              <span class="form-error" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span id="submitText">Send Message</span>
+              <i class='bx bx-send' id="submitIcon"></i>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <i class='bx bx-check-circle'></i>
+              <span>Message sent! I'll get back to you soon.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#hero" class="nav-logo">
+          <span class="logo-bracket">&lt;</span>HR<span class="logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer-copy">
+          Designed &amp; built with <span class="heart">♥</span> by <strong>Himani Rodhiyal</strong> · &copy; <span
+            id="footerYear"></span>
+        </p>
+        <div class="social-links">
+          <a href="https://github.com/himani79737" target="_blank" class="social-btn" aria-label="GitHub"><i
+              class='bx bxl-github'></i></a>
+          <a href="https://www.linkedin.com/in/himani-rodhiyal-84502b2a6/" target="_blank" class="social-btn"
+            aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+          <a href="https://www.instagram.com/himani_rodhiyal01?igsh=MWNiZ29wdzNlZ21pcQ==" target="_blank"
+            class="social-btn" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class='bx bx-chevron-up'></i>
+  </button>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("JC6j7ZNtKSZ1C2Qyq");
+})();
+</script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  emailjs.sendForm("service_g6mmty4", "template_51d65sb", this)
+    .then(function() {
+      document.getElementById("formSuccess").style.display = "block";
+      document.getElementById("contactForm").reset();
+    }, function(error) {
+      alert("Failed to send message");
+      console.log(error);
+    });
+});
+</script>
+  <script src="script.js"></script>
+</body>
+
+</html>
