@@ -9,7 +9,7 @@ Contact form with EmailJS integration
 Clean and modern UI
 Project showcase section
 
-#Tech Stack
+# Tech Stack
 HTML5
 CSS3
 JavaScript (Vanilla JS)
