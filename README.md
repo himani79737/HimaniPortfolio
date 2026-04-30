@@ -10,7 +10,7 @@ Clean and modern UI
 Project showcase section
 
 # Tech Stack
-1.HTML5
-2.CSS3
-3.JavaScript (Vanilla JS)
-4.EmailJS (for contact form)
+HTML5
+CSS3
+JavaScript 
+EmailJS (for contact form)
