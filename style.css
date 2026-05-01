@@ -1617,7 +1617,9 @@ button {
     height: 100%;
     object-fit: cover;
   }
-
+.about-img-wrap .mypic img{
+    min-width: 450px;
+  }
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 48px;
