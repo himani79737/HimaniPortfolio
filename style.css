@@ -243,7 +243,7 @@ button {
 /* ── 07. NAVBAR ───────────────────────────────────────────────── */
 .navbar {
   position: fixed;
-  top: 10px;
+  top: 20px;
   left: 0;
   right: 0;
   height: var(--nav-h);
