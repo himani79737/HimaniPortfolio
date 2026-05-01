@@ -243,7 +243,7 @@ button {
 /* ── 07. NAVBAR ───────────────────────────────────────────────── */
 .navbar {
   position: fixed;
-  top: 0;
+  top: 10px;
   left: 0;
   right: 0;
   height: var(--nav-h);
@@ -1618,7 +1618,7 @@ button {
     object-fit: cover;
   }
 .about-img-wrap .mypic img{
-    min-width: 450px;
+    min-width: 400px;
   }
   .contact-grid {
     grid-template-columns: 1fr;
