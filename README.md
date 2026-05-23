@@ -1,6 +1,7 @@
 # HimaniPortfolio
 This is my personal portfolio website built using HTML, CSS, and JavaScript.
 It showcases my skills, projects, and provides a way to contact me.
+creaete a form so people can connect with me 
 
 # Features
 Responsive design (mobile + desktop)
